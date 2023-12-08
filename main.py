@@ -79,22 +79,10 @@ def tokenize(sentiment__text):
     return data
 
 
-# Add a fold window to capture the count of words
-# grouped by positive, negative and neutral sentiment
-# over 1 minute period and then write them to a file
 cc = SystemClockConfig()
-# wc = TumblingWindow(length=timedelta(seconds=60), align_to=datetime(2023, 12, 7, 2, 42,37,587494).timezone())
-# base_datetime = datetime(2023, 12, 7, 2, 42, 37, 587494)
-timezone_info = pytz.timezone('Asia/Kolkata')  # Replace 'Your_Timezone_Here' with the desired timezone
+timezone_info = pytz.timezone('Asia/Kolkata') 
 
-# Align to the specified datetime with timezone
-# aligned_datetime = timezone_info.localize(base_datetime)
 
-# Define the length of the TumblingWindow
-# window_length = timedelta(seconds=60)
-
-# Create a TumblingWindow
-# wc = TumblingWindow(length=window_length, align_to=aligned_datetime)
 from datetime import datetime, timedelta, timezone
 
 class TumblingWindow:
